@@ -37,7 +37,7 @@ var fontF =                [0x80,  //0b00100000
 	                    0x02,  //0b00000010,
 	                    0x01]; //0b00000001]; 
 	
- var cb = 0x80;
+ // var cb = 0x80;
     
          displayChar();
 function displayChar() {
@@ -54,7 +54,7 @@ function displayChar() {
                 imgData.data[i+1] = 0x00;
 		imgData.data[i+2] = 0x00;
 		imgData.data[i+3] = 0xFF;
-		 document.getElementById("divCanv").innerHTML += "<br>" + fontF[i] +" "+ cb;
+		 document.getElementById("divCanv").innerHTML += "<br>" + fontF[i] +" ";
               }
         ctx.putImageData(imgData,16,208); 
 	
