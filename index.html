@@ -61,7 +61,7 @@ function displayChar() {
 	var fb; var k=0;
         for (let i=0; i<1*8; i+=8) { let rb = cb[0];
             for (let j=0; j<8; j++) {
-                 fb = fontF[i] & rb; document.getElementById("divCanv").innerHTML += "<br>" + fb +" "+ rb;
+                 fb = fontF[i] & rb; 
                  if (fb) {
 		   fontView[i+k+0] = 0xFF;
                  } else {
@@ -70,7 +70,8 @@ function displayChar() {
 		   fontView[i+k+1] = 0x00;
 		   fontView[i+k+2] = 0x00;
 		   fontView[i+k+3] = 0xFF;
-		    rb>>1; k+=4;
+		    rb>>1; k+=4; 
+		    document.getElementById("divCanv").innerHTML += "<br>" + fb +" "+ rb;
               }
           }
         for (let i=0; i<8*4*8; i++) {
