@@ -57,10 +57,11 @@ function displayChar() {
               }
         ctx.putImageData(imgData,16,208); */
 	
-        var cb = [0x80]; var fb; var k=0;
-        for (let i=0; i<1*8; i++) { cb = 128;
+        var cb = new Uint8Array([0x80]);
+	var fb; var k=0;
+        for (let i=0; i<1*8; i++) { let rb = cb;
             for (let j=0; j<8; j++) {
-                 fb = fontF[i+j] & cb; 
+                 fb = fontF[i+j] & rb; 
                  if (fb) {
 		   fontView[i+j+k+0] = 0xFF;
                  } else {
@@ -69,7 +70,7 @@ function displayChar() {
 		   fontView[i+j+k+1] = 0x00;
 		   fontView[i+j+k+2] = 0x00;
 		   fontView[i+j+k+3] = 0xFF;
-		    cb>>1; k+=4;
+		    rb>>1; k+=4;
               }
           }
         for (let i=0; i<8*4*8; i++) {
