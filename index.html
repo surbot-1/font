@@ -26,7 +26,7 @@ canvs.setAttribute("height", "2176");  // 2400-112-112=2176
 // canv.setAttribute("border", "solid black 1px");
 document.getElementById("divCanv").appendChild(canvs); 
 	
-alert('1');
+alert('2');
   
 var fontF =                [0x80,  //0b00100000
 	                    0x40,  //0b00100000
@@ -51,7 +51,7 @@ function displayChar() {
         
         var fontBuf = new ArrayBuffer(8*4*8);
         var fontView = new Uint8Array(fontBuf);
-         var k ; var cb = 16;
+         var k ; var cb = 0x20;
          for (let i=0; i<8*8; i++) {
                 imgData.data[k+0] = 0xFF;
                 imgData.data[k+1] = 0x00;
