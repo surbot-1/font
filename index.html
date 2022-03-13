@@ -57,9 +57,9 @@ function displayChar() {
               }
         ctx.putImageData(imgData,16,208); */
 	
-        var cb = 0x80;
+        var cb = [0x80];
 	var fb; var k=0;
-        for (let i=0; i<1*8; i+=8) { let rb = cb;
+        for (let i=0; i<1*8; i+=8) { let rb = cb[0];
             for (let j=0; j<8; j++) {
                  fb = fontF[i] & rb; 
                  if (fb) {
