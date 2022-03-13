@@ -56,13 +56,17 @@ function displayChar() {
                  fb = fontF[i] & cb[j]; 
                  if (fb) {
 		   fontView[k+0] = 0xFF;
-                 } else {
-		   fontView[k+0] = 0x00; 
-	         }
-		   fontView[k+1] = 0x00;
+                   fontView[k+1] = 0x00;
 		   fontView[k+2] = 0x00;
 		   fontView[k+3] = 0xFF;
 		    k+=4; 
+                   } else {
+		   fontView[k+0] = 0xFF; 
+		   fontView[k+1] = 0xFF;
+		   fontView[k+2] = 0xFF;
+		   fontView[k+3] = 0xFF;
+		    k+=4; 
+                   }
 		   // document.getElementById("divCanv").innerHTML += "<br>" + fb +" "+ rb;
               }
           }
