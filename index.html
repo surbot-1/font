@@ -26,7 +26,7 @@ canvs.setAttribute("height", "2176");  // 2400-112-112=2176
 // canv.setAttribute("border", "solid black 1px");
 document.getElementById("divCanv").appendChild(canvs); 
 	
-alert('8');
+alert('1');
   
 var fontF =                [0x80,  //0b00100000
 	                    0x40,  //0b00100000
@@ -37,7 +37,7 @@ var fontF =                [0x80,  //0b00100000
 	                    0x02,  //0b00000010,
 	                    0x01]; //0b00000001]; 
 	
-  var cb = 0x80; 
+  var cb = [0x80]; 
 
     
          displayChar();
@@ -57,7 +57,7 @@ function displayChar() {
 		imgData.data[k+3] = 0xFF;
 		 document.getElementById("divCanv").innerHTML += "<br>" + fontF[i] +" "+ cb;
                      k+=4; // cb=cb/2;
-		 var fb = fontF[i] & 0x08;
+		 var fb = fontF[i] & cb;
                      if (fb) {
 		      cb = 0xFF;
                      } else {
@@ -68,7 +68,7 @@ function displayChar() {
 	
       /*  var cb = 0x80;
 	var fb; var k=0;
-        for (let i=0; i<1*8; i+=8) { let rb = cb;
+        for (let i=0; i<1*8; i+=8) { cb=0x80;
             for (let j=0; j<8; j++) {
                  fb = fontF[i] & rb; 
                  if (fb) {
@@ -79,7 +79,7 @@ function displayChar() {
 		   fontView[i+k+1] = 0x00;
 		   fontView[i+k+2] = 0x00;
 		   fontView[i+k+3] = 0xFF;
-		    rb>>1; k+=4; 
+		    cb=cb/2; k+=4; 
 		   // document.getElementById("divCanv").innerHTML += "<br>" + fb +" "+ rb;
               }
           }
