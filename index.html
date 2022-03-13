@@ -46,7 +46,7 @@ function displayChar() {
                    */
 	var cnv = document.getElementById("canvas");
         var ctx = cnv.getContext('2d');
-        var imgData = ctx.createImageData(8*4, 8);
+        var imgData = ctx.createImageData(8, 8);
         
         var fontBuf = new ArrayBuffer(8*4*8);
         var fontView = new Uint8Array(fontBuf);
