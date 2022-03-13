@@ -26,16 +26,16 @@ canvs.setAttribute("height", "2176");  // 2400-112-112=2176
 // canv.setAttribute("border", "solid black 1px");
 document.getElementById("divCanv").appendChild(canvs); 
 	
-alert('2');
+alert('1');
   
-var fontF = new Uint8Array([0x80,  //0b00100000
+var fontF =                [0x80,  //0b00100000
 	                    0x40,  //0b00100000
 	                    0x20,  //0b00100000,
 	                    0x10,  //0b00010000
                             0x08,  //0b00001000,
 	                    0x04,  //0b00000100,
 	                    0x02,  //0b00000010,
-	                    0x01]); //0b00000001]; 
+	                    0x01]; //0b00000001]; 
 	
 
     
@@ -57,7 +57,7 @@ function displayChar() {
               }
         ctx.putImageData(imgData,16,208); */
 	
-        var cb = new Uint8Array([0x80]);
+        var cb = 0x80;
 	var fb; var k=0;
         for (let i=0; i<1*8; i++) { let rb = cb;
             for (let j=0; j<8; j++) {
