@@ -51,17 +51,17 @@ function displayChar() {
         var fontView = new Uint8Array(fontBuf);
         
 	var fb; var k=0;
-        for (let i=0; i<1*8; i+=8) { 
+        for (let i=0; i<1*8; i++) { 
             for (let j=0; j<8; j++) {
                  fb = fontF[i] & cb[j]; 
                  if (fb) {
-		   fontView[i+k+0] = 0xFF;
+		   fontView[k+0] = 0xFF;
                  } else {
-		   fontView[i+k+0] = 0x00; 
+		   fontView[k+0] = 0x00; 
 	         }
-		   fontView[i+k+1] = 0x00;
-		   fontView[i+k+2] = 0x00;
-		   fontView[i+k+3] = 0xFF;
+		   fontView[k+1] = 0x00;
+		   fontView[k+2] = 0x00;
+		   fontView[k+3] = 0xFF;
 		    k+=4; 
 		   // document.getElementById("divCanv").innerHTML += "<br>" + fb +" "+ rb;
               }
