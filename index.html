@@ -61,7 +61,7 @@ function displayChar() {
 	var fb; var k=0;
         for (let i=0; i<1*8; i+=8) { let rb = cb[0];
             for (let j=0; j<8; j++) {
-                 fb = fontF[i] & rb; 
+                 fb = fontF[i] & rb; document.getElementById("divCanv").innerHTML += "<br>" + fb +" "+ rb;
                  if (fb) {
 		   fontView[i+k+0] = 0xFF;
                  } else {
