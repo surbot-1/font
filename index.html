@@ -45,15 +45,15 @@ function displayChar() {
      
         var cnv = document.getElementById("canvas");
         var ctx = cnv.getContext('2d');
-        var imgData = ctx.createImageData(8, 8);
+        var imgData = ctx.createImageData(24, 32);
         
-        var fontBuf = new ArrayBuffer(8*4*8);
+        var fontBuf = new ArrayBuffer(24*4*32);
         var fontView = new Uint8Array(fontBuf);
         
 	var fb; var k=0;
-        for (let i=0; i<1*8; i++) { 
+        for (let i=0; i<3*32; i++) { 
             for (let j=0; j<8; j++) {
-                 fb = uFont[i] & cb[j]; 
+                 fb = uFont[33+i] & cb[j]; 
                  if (fb) {
 		   fontView[k+0] = 0xFF;
                    fontView[k+1] = 0x00;
