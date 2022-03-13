@@ -56,7 +56,7 @@ function displayChar() {
 		imgData.data[k+2] = 0x00;
 		imgData.data[k+3] = 0xFF;
 		 document.getElementById("divCanv").innerHTML += "<br>" + fontF[i] +" "+ cb;
-                 k+=4;  cb>>1;
+                 k+=4;  cb=cb/2;
 	        }
         ctx.putImageData(imgData,16,208); 
 	
