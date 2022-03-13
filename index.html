@@ -53,7 +53,7 @@ function displayChar() {
 	var fb; var k=0;
         for (let i=0; i<1*8; i+=8) { 
             for (let j=0; j<8; j++) {
-                 fb = fontF[i] & cb[i]; 
+                 fb = fontF[i] & cb[j]; 
                  if (fb) {
 		   fontView[i+k+0] = 0xFF;
                  } else {
