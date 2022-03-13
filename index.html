@@ -49,7 +49,7 @@ function displayChar() {
 		0x80,0x40,0x20,0x10,0x08,0x04,0x02,0x01,
 		0x80,0x40,0x20,0x10,0x08,0x04,0x02,0x01,
 		0x80,0x40,0x20,0x05,0x04,0x03,0x02,0x01]; */
-        var cb = 255;
+        
                    
 	var cnv = document.getElementById("canvas");
         var ctx = cnv.getContext('2d');
@@ -66,8 +66,8 @@ function displayChar() {
               }
         ctx.putImageData(imgData,16,208); */
 	
-        var fb; var k=0;
-        for (let i=0; i<1*8; i++) {
+        var cb = 255; var fb; var k=0;
+        for (let i=0; i<1*8; i++) { cb = 255;
             for (let j=0; j<8; j++) {
                  fb = fontF[i+j] & cb; 
                  if (fb) {
