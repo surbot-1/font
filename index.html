@@ -49,14 +49,14 @@ function displayChar() {
         
         var fontBuf = new ArrayBuffer(8*4*8);
         var fontView = new Uint8Array(fontBuf);
-	
+         var k ;
          for (let i=0; i<8*8; i++) {
                 imgData.data[k+0] = 0xFF;
                 imgData.data[k+1] = 0x00;
 		imgData.data[k+2] = 0x00;
 		imgData.data[k+3] = 0xFF;
 		 document.getElementById("divCanv").innerHTML += "<br>" + fontF[i] +" "+ cb;
-                 k+=4; // cb=cb/2;
+                 k+=4;  cb>>1;
 	        }
         ctx.putImageData(imgData,16,208); 
 	
