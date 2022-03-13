@@ -26,7 +26,7 @@ canvs.setAttribute("height", "2176");  // 2400-112-112=2176
 // canv.setAttribute("border", "solid black 1px");
 document.getElementById("divCanv").appendChild(canvs); 
 	
-alert('7');
+alert('8');
   
 var fontF =                [0x80,  //0b00100000
 	                    0x40,  //0b00100000
@@ -38,7 +38,7 @@ var fontF =                [0x80,  //0b00100000
 	                    0x01]; //0b00000001]; 
 	
   var cb = 0x80; 
-// cb>>1;
+
     
          displayChar();
 function displayChar() {
@@ -56,7 +56,13 @@ function displayChar() {
 		imgData.data[k+2] = 0x00;
 		imgData.data[k+3] = 0xFF;
 		 document.getElementById("divCanv").innerHTML += "<br>" + fontF[i] +" "+ cb;
-                 k+=4;  cb=cb/2;
+                     k+=4; // cb=cb/2;
+		 var fb = fontF[i] & 0x08;
+                     if (fb) {
+		      cb = 0xFF;
+                     } else {
+		      cb = 0x00; 
+	             }
 	        }
         ctx.putImageData(imgData,16,208); 
 	
