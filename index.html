@@ -39,7 +39,7 @@ var fontF =                [0x80,  //0b00100000
 	
         var c = [0x80,0x40,0x20]; 
 	var fb; 
-         var cb = 16;
+         //var cb = 16;
 
     
          displayChar();
@@ -51,7 +51,7 @@ function displayChar() {
         
         var fontBuf = new ArrayBuffer(8*4*8);
         var fontView = new Uint8Array(fontBuf);
-         var k ;
+         var k ; var cb = 16;
          for (let i=0; i<8*8; i++) {
                 imgData.data[k+0] = 0xFF;
                 imgData.data[k+1] = 0x00;
