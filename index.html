@@ -37,10 +37,8 @@ var fontF =                [0x80,  //0b00100000
 	                    0x02,  //0b00000010,
 	                    0x01]; //0b00000001]; 
 	
-        var cb = [0x80,0x40,0x20]; 
-	var fb; 
-         var  c;
-
+var cb = [0x80,0x40,0x20,0x10,0x08,0x04,0x02,0x01];
+         
     
          displayChar();
 function displayChar() {
@@ -51,31 +49,11 @@ function displayChar() {
         
         var fontBuf = new ArrayBuffer(8*4*8);
         var fontView = new Uint8Array(fontBuf);
-         var k ; 
-         for (let i=0; i<8*8; i++) {
-                imgData.data[k+0] = 0xFF;
-                imgData.data[k+1] = 0x00;
-		imgData.data[k+2] = 0x00;
-		imgData.data[k+3] = 0xFF;
-		 document.getElementById("divCanv").innerHTML += "<br>" + fontF[i] +" "+ cb+" "+c+" "+ fb;
-                     k+=4;
-		    var a=fontF[i];
-		      
-		    var b=cb[2];
-		  fb = a&b;
-                     if (fb) {
-		      c = 0xFF;
-                     } else {
-		      c = 0x00; 
-	             }
-	        }
-       // ctx.putImageData(imgData,16,208); 
-	
-      /*  var cb = 0x80;
+        
 	var fb; var k=0;
-        for (let i=0; i<1*8; i+=8) { cb=0x80;
+        for (let i=0; i<1*8; i+=8) { 
             for (let j=0; j<8; j++) {
-                 fb = fontF[i] & rb; 
+                 fb = fontF[i] & cb[i]; 
                  if (fb) {
 		   fontView[i+k+0] = 0xFF;
                  } else {
@@ -84,14 +62,14 @@ function displayChar() {
 		   fontView[i+k+1] = 0x00;
 		   fontView[i+k+2] = 0x00;
 		   fontView[i+k+3] = 0xFF;
-		    cb=cb/2; k+=4; 
+		    k+=4; 
 		   // document.getElementById("divCanv").innerHTML += "<br>" + fb +" "+ rb;
               }
           }
         for (let i=0; i<8*4*8; i++) {
              imgData.data[i] = fontView[i];
               }
-        ctx.putImageData(imgData,16,208);  */
+        ctx.putImageData(imgData,16,208);  
      } 
 	
 </script>
