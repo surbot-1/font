@@ -69,7 +69,7 @@ function displayChar() {
 		   fontView[i+j+k+1] = 0x00;
 		   fontView[i+j+k+2] = 0x00;
 		   fontView[i+j+k+3] = 0xFF;
-		    cb>>1; k+=4;
+		    cb>>>1; k+=4;
               }
           }
         for (let i=0; i<8*4*8; i++) {
