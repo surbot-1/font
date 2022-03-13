@@ -26,9 +26,9 @@ canvs.setAttribute("height", "2176");  // 2400-112-112=2176
 // canv.setAttribute("border", "solid black 1px");
 document.getElementById("divCanv").appendChild(canvs); 
 	
-alert('1');
+alert('2');
   
-var fontF =                [0x80,  //0b00100000
+const fontF =                [0x80,  //0b00100000
 	                    0x40,  //0b00100000
 	                    0x20,  //0b00100000,
 	                    0x10,  //0b00010000
@@ -37,7 +37,7 @@ var fontF =                [0x80,  //0b00100000
 	                    0x02,  //0b00000010,
 	                    0x01]; //0b00000001]; 
 	
-  var cb = [0x80,0x40,0x20]; var fb;
+  const cb = [0x80,0x40,0x20]; var fb;
 
     
          displayChar();
@@ -58,7 +58,7 @@ function displayChar() {
 		 document.getElementById("divCanv").innerHTML += "<br>" + fontF[i] +" "+ cb+" "+ fb;
                      k+=4;
 		    var a=fontF[i];
-		    var b=cb[1];
+		    var b=cb[2];
 		  fb = a&b;
                      if (fb) {
 		      cb = 0xFF;
