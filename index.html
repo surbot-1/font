@@ -57,7 +57,7 @@ function displayChar() {
 		imgData.data[k+3] = 0xFF;
 		 document.getElementById("divCanv").innerHTML += "<br>" + fontF[i] +" "+ cb+" "+ fb;
                      k+=4; // cb=cb/2;
-		  fb = fontF[i] & cb[2];
+		  fb = (fontF[i] & cb[2]);
                      if (fb) {
 		      cb = 0xFF;
                      } else {
