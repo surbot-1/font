@@ -26,7 +26,7 @@ canvs.setAttribute("height", "2176");  // 2400-112-112=2176
 // canv.setAttribute("border", "solid black 1px");
 document.getElementById("divCanv").appendChild(canvs); 
 	
-
+alert('1');
   
 var fontF =  [0b10000000,
 	      0b01000000,
@@ -46,10 +46,10 @@ function displayChar() {
         
 	var cnv = document.getElementById("canvas");
         var ctx = cnv.getContext('2d');
-        var imgData = ctx.createImageData(8, 8);
+        var imgData = ctx.createImageData(8*4, 8);
         // imgData.data[0] = ubuntuFont[0];
         var fontBuf = new ArrayBuffer(8*4*8);
-        var fontView = new Uint8Array(buffer);
+        var fontView = new Uint8Array(fontBuf);
         var fb; var k=0;
         for (let i=0; i<1*8; i++) {
             for (let j=0; j<8; j++) {
