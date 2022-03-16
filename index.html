@@ -54,11 +54,12 @@ for (let i=0,j=0,k=0; k<125; k++) {
 	  cy=(ch+sh)*j;
 	  putChar();
 	  i++;
-      } else if (i>=0 && i<25 && j>50) {
+      } else if (i>=0 && i<25 && j>=50) {
 	  i=0; j=0;
 	  cx=(cw+sw)*i; 
 	  cy=(ch+sh)*j;
 	  putChar();
+	  i++;
        } 
     
     }
