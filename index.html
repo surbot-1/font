@@ -30,7 +30,43 @@ canvs.setAttribute("height", "2176");  // 2400-112-112=2176
 // canv.setAttribute("border", "solid black 1px");
 document.getElementById("divCanv").appendChild(canvs); 
 	
-alert('2');
+</script>
+	
+	
+<script>
+
+var cw=24; var ch=32;
+var sw=4; var sh=8;
+var cxi=0; var cxf=1080;
+var cx=0; var cy=0;
+var oh = 0x41-0x20;
+	
+     
+for (let i=0,j=0,k=0; k<125; k++) {
+     if (i>=0 && i<25 && j>=0 && j<50){
+	  cx=(cw+sw)*i; 
+	  cy=(ch+sh)*j;
+	  putChar();
+	  i++;
+      } else if (i>=25 && j>=0 && j<50) {
+	  i=0; j++;
+	  cx=(cw+sw)*i; 
+	  cy=(ch+sh)*j;
+	  putChar();
+	  i++;
+      } else if (i>=0 && i<25 && j>50) {
+	  i=0; j=0;
+	  cx=(cw+sw)*i; 
+	  cy=(ch+sh)*j;
+	  putChar();
+       } 
+    
+    }
+	
+</script>
+	
+	
+<script>
   
 var fontF =                [0x80,  //0b00100000
 	                    0x40,  //0b00100000
@@ -44,20 +80,20 @@ var fontF =                [0x80,  //0b00100000
 var cb = new Uint8Array ([0x80,0x40,0x20,0x10,0x08,0x04,0x02,0x01]);
          
     
-         displayChar();
-function displayChar() {
+         putChar();
+function putChar() {
      
         var cnv = document.getElementById("canvas");
         var ctx = cnv.getContext('2d');
-        var imgData = ctx.createImageData(24, 32);
+        var imgData = ctx.createImageData(cw, ch);
         
-        var fontBuf = new ArrayBuffer(24*4*32);
+        var fontBuf = new ArrayBuffer(cw*4*ch);
         var fontView = new Uint8Array(fontBuf);
         
 	var fb; var k=0;
-        for (let i=0; i<(24/8)*32; i++) { 
+        for (let i=0; i<(cw/8)*ch; i++) { 
             for (let j=0; j<8; j++) {
-                 fb = ubuntubold[(24/8)*32*33+i] & cb[j]; 
+                 fb = ubuntufont[(cw/8)*ch*oh+i] & cb[j]; 
                  if (fb) {
 		   fontView[k+0] = 0xFF;
                    fontView[k+1] = 0x00;
@@ -74,10 +110,10 @@ function displayChar() {
 		  
               }
           }
-        for (let i=0; i<24*4*32; i++) {
+        for (let i=0; i<cw*4*ch; i++) {
              imgData.data[i] = fontView[i];
               }
-        ctx.putImageData(imgData,16,208);  
+        ctx.putImageData(imgData,cx,cy);  
      } 
 	
 </script>
