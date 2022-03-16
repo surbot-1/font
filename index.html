@@ -44,35 +44,14 @@ var oh = 0x41-0x20;
   var i=0; var j=0; var k=0;
   for (let n=0; n<125; n++) {
      if (i>25){i=0; j++;}
-     if (j>25){i=0; j=0;}
+     if (j>50){i=0; j=0;}
 	  cx=(cw+sw)*i; 
 	  cy=(ch+sh)*j;
-	  oh+=k;
+	  oh=k;
 	  putChar();
 	  i++; k++;
    }
-     /* var i=0; var j=0;
-for (let k=0; k<125; k++) {
-     if (i>=0 && i<25 && j>=0 && j<50){
-	  cx=(cw+sw)*i; 
-	  cy=(ch+sh)*j;
-	  putChar();
-	  i++;
-      } else if (i>=25 && j>=0 && j<50) {
-	  i=0; j++;
-	  cx=(cw+sw)*i; 
-	  cy=(ch+sh)*j;
-	  putChar();
-	  i++;
-      } else if (i>=0 && i<25 && j>=50) {
-	  i=0; j=0;
-	  cx=(cw+sw)*i; 
-	  cy=(ch+sh)*j;
-	  putChar();
-	  i++;
-       } 
-    
-    } */
+     
 	
 </script>
 	
@@ -131,7 +110,28 @@ function putChar() {
 	
 	
 <script>
+    /* var i=0; var j=0;
+for (let k=0; k<125; k++) {
+     if (i>=0 && i<25 && j>=0 && j<50){
+	  cx=(cw+sw)*i; 
+	  cy=(ch+sh)*j;
+	  putChar();
+	  i++;
+      } else if (i>=25 && j>=0 && j<50) {
+	  i=0; j++;
+	  cx=(cw+sw)*i; 
+	  cy=(ch+sh)*j;
+	  putChar();
+	  i++;
+      } else if (i>=0 && i<25 && j>=50) {
+	  i=0; j=0;
+	  cx=(cw+sw)*i; 
+	  cy=(ch+sh)*j;
+	  putChar();
+	  i++;
+       } 
     
+    } */
 </script>
   
 <script>
