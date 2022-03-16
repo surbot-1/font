@@ -9,6 +9,7 @@
 <body>
 
 <script src="ubuntufont.js"></script>
+<script src="ubuntubold.js"></script>
 <script src="font1632.js"></script>
 <script src="font2448.js"></script>
 <script src="font3264.js"></script>
@@ -40,7 +41,7 @@ var fontF =                [0x80,  //0b00100000
 	                    0x02,  //0b00000010,
 	                    0x01]; //0b00000001]; 
 	
-var cb = [0x80,0x40,0x20,0x10,0x08,0x04,0x02,0x01];
+var cb = new Uint8Array ([0x80,0x40,0x20,0x10,0x08,0x04,0x02,0x01]);
          
     
          displayChar();
@@ -48,22 +49,22 @@ function displayChar() {
      
         var cnv = document.getElementById("canvas");
         var ctx = cnv.getContext('2d');
-        var imgData = ctx.createImageData(24, 48);
+        var imgData = ctx.createImageData(24, 32);
         
-        var fontBuf = new ArrayBuffer(24*4*48);
+        var fontBuf = new ArrayBuffer(24*4*32);
         var fontView = new Uint8Array(fontBuf);
         
 	var fb; var k=0;
-        for (let i=0; i<3*48; i++) { 
+        for (let i=0; i<(24/8)*32; i++) { 
             for (let j=0; j<8; j++) {
-                 fb = font2448[3*48*33+i] & cb[j]; 
+                 fb = font2448[(24/8)*32*33+i] & cb[j]; 
                  if (fb) {
 		   fontView[k+0] = 0xFF;
                    fontView[k+1] = 0x00;
 		   fontView[k+2] = 0x00;
 		   fontView[k+3] = 0xFF;
 		    k+=4; 
-                   } else {
+                 } else {
 		   fontView[k+0] = 0xFF; 
 		   fontView[k+1] = 0xFF;
 		   fontView[k+2] = 0xFF;
@@ -73,7 +74,7 @@ function displayChar() {
 		  
               }
           }
-        for (let i=0; i<24*4*48; i++) {
+        for (let i=0; i<24*4*32; i++) {
              imgData.data[i] = fontView[i];
               }
         ctx.putImageData(imgData,16,208);  
