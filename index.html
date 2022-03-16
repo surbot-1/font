@@ -57,7 +57,7 @@ function displayChar() {
 	var fb; var k=0;
         for (let i=0; i<(24/8)*32; i++) { 
             for (let j=0; j<8; j++) {
-                 fb = font2448[(24/8)*32*33+i] & cb[j]; 
+                 fb = ubuntubold[(24/8)*32*33+i] & cb[j]; 
                  if (fb) {
 		   fontView[k+0] = 0xFF;
                    fontView[k+1] = 0x00;
