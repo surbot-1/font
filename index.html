@@ -57,12 +57,8 @@ function writeChar() {
    for (let n=0; n<cpr; n++) {
       if (msgArr[k]==0x0A) {
 	  i=0; j++;
-          if (j>50){i=0; j=0;}
-	 /* cx=(cw+sw)*i; 
-	  cy=(ch+sh)*j;
-	  oh=msgArr[k]-0x20;
-	  putChar(); */
-	  i++; k++;
+          if (j>50){i=0; j=0;
+	  k++;
       } else {
           if (i>25){i=0; j++;}
           if (j>50){i=0; j=0;}
