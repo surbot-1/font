@@ -55,17 +55,25 @@ var cpr = 8;
 function writeChar() {
    var i=0; var j=0; var k=0;
    for (let n=0; n<cpr; n++) {
-     if (msgArr[k]==0x0A){i=0; j++;}
-     if (j>50){i=0; j=0;}
-     if (i>25){i=0; j++;}
-     if (j>50){i=0; j=0;}
+      if (msgArr[k]==0x0A) {
+	  i=0; j++;
+          if (j>50){i=0; j=0;}
 	  cx=(cw+sw)*i; 
 	  cy=(ch+sh)*j;
 	  oh=0x41-k;
 	  putChar();
 	  i++; k++;
-    }
- }   
+      } else {
+          if (i>25){i=0; j++;}
+          if (j>50){i=0; j=0;}
+	  cx=(cw+sw)*i; 
+	  cy=(ch+sh)*j;
+	  oh=0x41-k;
+	  putChar();
+	  i++; k++;
+      }
+     }   
+  }
 	
 
   alert('2');
