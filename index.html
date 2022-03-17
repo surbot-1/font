@@ -87,7 +87,7 @@ function putChar() {
             for (let j=0; j<8; j++) {
                  fb = ubuntufont[(cw/8)*ch*oh+i] & cb[j]; 
                  if (fb) {
-		   fontView[k+0] = 0xFF;
+		   fontView[k+0] = 0x00;
                    fontView[k+1] = 0x00;
 		   fontView[k+2] = 0x00;
 		   fontView[k+3] = 0xFF;
