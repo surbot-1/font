@@ -53,6 +53,10 @@ var cpr = 8;
 	
        writeChar();
 function writeChar() {
+	
+  var can = document.getElementById("canvas");
+  var ctx = can.getContext('2d');
+	
    var i=0; var j=0; var k=0;
    for (let n=0; n<cpr; n++) {
       if (msgArr[k]==0x0A) {
@@ -69,6 +73,13 @@ function writeChar() {
 	  i++; k++;
       }
      }   
+     if (i>25){i=0; j++;}
+     if (j>50){i=0; j=0;}
+     cx=(cw+sw)*i; 
+     cy=(ch+sh)*j;
+     ctx.fillStyle = "white";
+     ctx.fillRect(cx, cy, 4, 32);
+     
   }
 	
 
@@ -114,7 +125,7 @@ function putChar() {
         for (let i=0; i<cw*4*ch; i++) {
              imgData.data[i] = fontView[i];
               }
-        ctx.putImageData(imgData,cx,cy);  
+        ctx.putImageData(imgData,cx+sw,cy);  
      } 
 	
 </script>
