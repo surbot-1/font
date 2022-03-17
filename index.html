@@ -57,10 +57,10 @@ function writeChar() {
  }   
 	
 
-	</script>
+</script>
 	
 	
-	<script>
+<script>
 	
 
   alert('2');
@@ -76,11 +76,11 @@ var fontF =                [0x80,  //0b00100000
 // var cb = new Uint8Array ([0x80,0x40,0x20,0x10,0x08,0x04,0x02,0x01]);
          
     
-         putChar();
+        // putChar();
 function putChar() {
      
-        var cnv = document.getElementById("canvas");
-        var ctx = cnv.getContext('2d');
+        var can = document.getElementById("canvas");
+        var ctx = can.getContext('2d');
         var imgData = ctx.createImageData(cw, ch);
         
         var fontBuf = new ArrayBuffer(cw*4*ch);
