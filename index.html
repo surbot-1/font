@@ -46,15 +46,22 @@ var oh=0x41-0x20;
 	
 <script>
 	
+var msgBuf = new ArrayBuffer(256);
+var msgView = new Uint8Array(msgBuf);
+var msgArr = new Uint8Array ([0x41,0x42,0x43,0x44,0x45,0x0A,0x46,0x47]);
+var cpr = 8;
+	
        writeChar();
 function writeChar() {
    var i=0; var j=0; var k=0;
-   for (let n=0; n<125; n++) {
+   for (let n=0; n<cpr; n++) {
+     if (msgArr[k]==0x0A){i=0; j++;}
+     if (j>50){i=0; j=0;}
      if (i>25){i=0; j++;}
      if (j>50){i=0; j=0;}
 	  cx=(cw+sw)*i; 
 	  cy=(ch+sh)*j;
-	  oh=k;
+	  oh=0x41-k;
 	  putChar();
 	  i++; k++;
     }
@@ -63,9 +70,7 @@ function writeChar() {
 
   alert('2');
 	
-var msgBuf = new ArrayBuffer(256);
-var msgView = new Uint8Array(msgBuf);
-var msgArr = new Uint8Array ([0x80,0x40,0x20,0x10,0x08,0x04,0x02,0x01]);
+
 	
 // var cb = new Uint8Array ([0x80,0x40,0x20,0x10,0x08,0x04,0x02,0x01]);
          
