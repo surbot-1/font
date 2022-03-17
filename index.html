@@ -58,17 +58,17 @@ function writeChar() {
       if (msgArr[k]==0x0A) {
 	  i=0; j++;
           if (j>50){i=0; j=0;}
-	  cx=(cw+sw)*i; 
+	 /* cx=(cw+sw)*i; 
 	  cy=(ch+sh)*j;
-	  oh=0x41-k;
-	  putChar();
+	  oh=msgArr[i]-0x20;
+	  putChar(); */
 	  i++; k++;
       } else {
           if (i>25){i=0; j++;}
           if (j>50){i=0; j=0;}
 	  cx=(cw+sw)*i; 
 	  cy=(ch+sh)*j;
-	  oh=0x41-k;
+	  oh=msgArr[i]-0x20;
 	  putChar();
 	  i++; k++;
       }
