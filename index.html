@@ -32,11 +32,7 @@ canvs.setAttribute("height", "2176");  // 2400-112-112=2176
 document.getElementById("divCanv").appendChild(canvs); 
 	
 </script>
-	
-	
-
 <script>
-alert('1');
 var cw=24; var ch=32;
 var sw=4; var sh=8;
 var cxi=0; var cxf=1080;
@@ -46,126 +42,75 @@ var oh=0x41-0x20;
 	
 	
 <script>
-	
 var msgBuf = new ArrayBuffer(256);
 var msgView = new Uint8Array(msgBuf);
 var msgArr = new Uint8Array ([0x41,0x42,0x43,0x44,0x45,0x0A,0x46,0x47]);
 var cpr = 8;
-	
-       writeChar();
-function writeChar() {
-	
-  var can = document.getElementById("canvas");
-  var ctx = can.getContext('2d');
-	
-   var i=0; var j=0; var k=0;
-   for (let n=0; n<cpr; n++) {
-      if (msgArr[k]==0x0A) {
-	  i=0; j++; k++;
-          if (j>50){i=0; j=0}
-      } else {
-	  cx=(cw)*i; 
-	  cy=(ch)*j;
-	  oh=msgArr[k]-0x20;
-	  putChar();
-	  i++; k++;
-	  if (i>25){i=0; j++;}
-          if (j>50){i=0; j=0;}
-      }
-     }   
-     if (i>25){i=0; j++;}
-     if (j>50){i=0; j=0;}
-     cx=(cw)*i; 
-     cy=(ch)*j;
-     ctx.fillStyle = "blue";
-     ctx.fillRect(cx-24, cy, 2, 32);
-     
-  }
-	
-
-  alert('2');
-	
-	
-// var cb = new Uint8Array ([0x80,0x40,0x20,0x10,0x08,0x04,0x02,0x01]);
-         
-    
-        // putChar();
-function putChar() {
-     
-        var can = document.getElementById("canvas");
-        var ctx = can.getContext('2d');
-        var imgData = ctx.createImageData(cw, ch);
-        
-        var fontBuf = new ArrayBuffer(cw*4*ch);
-        var fontView = new Uint8Array(fontBuf);
-        
-	var cb = new Uint8Array ([0x80,0x40,0x20,0x10,0x08,0x04,0x02,0x01]);
-	
-	var fb; var k=0;
-        for (let i=0; i<(cw/8)*ch; i++) { 
-            for (let j=0; j<8; j++) {
-                 fb = ubuntufont[(cw/8)*ch*oh+i] & cb[j]; 
-                 if (fb) {
-		   fontView[k+0] = 0x00;
-                   fontView[k+1] = 0x00;
-		   fontView[k+2] = 0x00;
-		   fontView[k+3] = 0xFF;
-		    k+=4; 
-                 } else {
-		   fontView[k+0] = 0xFF; 
-		   fontView[k+1] = 0xFF;
-		   fontView[k+2] = 0xFF;
-		   fontView[k+3] = 0xFF;
-		    k+=4; 
-                   }
-		  
-              }
-          }
-        for (let i=0; i<cw*4*ch; i++) {
-             imgData.data[i] = fontView[i];
-              }
-        ctx.putImageData(imgData,cx,cy);  
-     } 
-	
+	writeChar();
+	function writeChar() {
+		var can = document.getElementById("canvas");
+		var ctx = can.getContext('2d');
+		var i=0; var j=0; var k=0;
+		for (let n=0; n<cpr; n++) {
+			if (msgArr[k]==0x0A) {
+				i=0; j++; k++;
+				if (j>50){i=0; j=0}
+			} else {
+				cx=(cw)*i;
+				cy=(ch)*j;
+				oh=msgArr[k]-0x20;
+				putChar();
+				i++; k++;
+				if (i>25){i=0; j++;}
+				if (j>50){i=0; j=0;}
+			}
+		}
+		if (i>25){i=0; j++;}
+		if (j>50){i=0; j=0;}
+		cx=(cw)*i; 
+		cy=(ch)*j;
+		ctx.fillStyle = "blue";
+		ctx.fillRect(cx-24, cy, 2, 32);
+	}
+	alert('2');
+	// var cb = new Uint8Array ([0x80,0x40,0x20,0x10,0x08,0x04,0x02,0x01]);
+	// putChar();
+	function putChar() {
+		var can = document.getElementById("canvas");
+		var ctx = can.getContext('2d');
+		var imgData = ctx.createImageData(cw, ch);
+		var fontBuf = new ArrayBuffer(cw*4*ch);
+		var fontView = new Uint8Array(fontBuf);
+		var cb = new Uint8Array ([0x80,0x40,0x20,0x10,0x08,0x04,0x02,0x01]);
+		var fb; var k=0;
+		for (let i=0; i<(cw/8)*ch; i++) { 
+			for (let j=0; j<8; j++) {
+				fb = ubuntufont[(cw/8)*ch*oh+i] & cb[j]; 
+				if (fb) {
+					fontView[k+0] = 0x00;
+					fontView[k+1] = 0x00;
+					fontView[k+2] = 0x00;
+					fontView[k+3] = 0xFF;
+					k+=4;
+				} else {
+					fontView[k+0] = 0xFF;
+					fontView[k+1] = 0xFF;
+					fontView[k+2] = 0xFF;
+					fontView[k+3] = 0xFF;
+					k+=4;
+				}
+			}
+			for (let i=0; i<cw*4*ch; i++) {
+				imgData.data[i] = fontView[i];
+			}
+			ctx.putImageData(imgData,cx,cy);  
+		}
 </script>
-	
-
-	
 <script>
-    /* var i=0; var j=0;
-for (let k=0; k<125; k++) {
-     if (i>=0 && i<25 && j>=0 && j<50){
-	  cx=(cw+sw)*i; 
-	  cy=(ch+sh)*j;
-	  putChar();
-	  i++;
-      } else if (i>=25 && j>=0 && j<50) {
-	  i=0; j++;
-	  cx=(cw+sw)*i; 
-	  cy=(ch+sh)*j;
-	  putChar();
-	  i++;
-      } else if (i>=0 && i<25 && j>=50) {
-	  i=0; j=0;
-	  cx=(cw+sw)*i; 
-	  cy=(ch+sh)*j;
-	  putChar();
-	  i++;
-       } 
-    
-    } */
 </script>
-  
 <script>
-	
-	
 </script>
-  
-
-  
 <script>
-  
 </script>
-	
 </body>
 </html>
