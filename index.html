@@ -38,14 +38,16 @@ var sw=4; var sh=8;
 var cxi=0; var cxf=1080;
 var cx=0; var cy=0;
 var oh=0x41-0x20;
+var data1;
 </script>
 	
 	
 <script>
 var msgBuf = new ArrayBuffer(256);
 var msgView = new Uint8Array(msgBuf);
-var msgArr = new Uint8Array ([0x41,0x42,0x43,0x44,0x45,0x0A,0x46,0x47]);
-var cpr = 8;
+var msgArr = new Uint8Array ([0x41,0x42,0x43,0x44,0x45,0x0A,0x46,data1]);
+var cpr = 8; 
+	fileFormater();
 	writeChar();
 	function writeChar() {
 		var can = document.getElementById("canvas");
@@ -106,11 +108,14 @@ var cpr = 8;
 			}
 			ctx.putImageData(imgData,cx,cy);  
 	}
+	
 </script>
 
 	
 <script>
-/*
+
+function driveFormater() {
+	
 var driveBuf = new ArrayBuffer(128*1024*1024);
 var driveView = new Uint8Array(driveBuf);
 // Master Boot Record 1MB
@@ -207,7 +212,11 @@ var driveView = new Uint8Array(driveBuf);
 	driveView[0x00C00000+0x05] = 0x46; // data
 	driveView[0x00C00000+0x06] = 0x47; // data
 	driveView[0x00C00000+0x07] = 0x48; // data
-        */
+	
+       data1 = driveView[0x00C00000+0x00]; // data
+	
+}
+        
 </script>
 	
 <script>
