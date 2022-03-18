@@ -100,16 +100,17 @@ var cpr = 8;
 					k+=4;
 				}
 			}
+		}
 			for (let i=0; i<cw*4*ch; i++) {
 				imgData.data[i] = fontView[i];
 			}
 			ctx.putImageData(imgData,cx,cy);  
-		}
+	}
 </script>
 
 	
 <script>
-	
+/*
 var driveBuf = new ArrayBuffer(128*1024*1024);
 var driveView = new Uint8Array(driveBuf);
 // Master Boot Record 1MB
@@ -206,18 +207,9 @@ var driveView = new Uint8Array(driveBuf);
 	driveView[0x00C00000+0x05] = 0x46; // data
 	driveView[0x00C00000+0x06] = 0x47; // data
 	driveView[0x00C00000+0x07] = 0x48; // data
-	
-	
-     /* driveView[0] = 0x00;
-	driveView[0] = 0x00;
-	driveView[0] = 0x00;
-	driveView[0] = 0x00;
-	driveView[0] = 0x00;
-	driveView[0] = 0x00;
-	driveView[0] = 0x00;
-	driveView[0] = 0x00; */
-	
+        */
 </script>
+	
 <script>
 </script>
 <script>
