@@ -211,8 +211,8 @@ var driveView = new Uint8Array(driveBuf);
 	driveView[0x00C00000+0x06] = 0x47; // data
 	driveView[0x00C00000+0x07] = 0x48; // data
         */
-       driveView[0x00C00000] = 0x41; // data
-       data1 = driveView[0x00C00000]; // data
+      // driveView[0x00C00000] = 0x41; // data
+       data1 = 0x41; // driveView[0x00C00000]; // data
 	
 }
         
