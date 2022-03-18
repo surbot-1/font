@@ -114,9 +114,8 @@ var cpr = 8;
 	
 
 function driveFormater() {
-	
-// var driveBuf = new ArrayBuffer(128*1024*1024);
-// var driveView = new Uint8Array(driveBuf);
+var driveBuf = new ArrayBuffer(128*1024*1024);
+var driveView = new Uint8Array(driveBuf);
 /* // Master Boot Record 1MB
         driveView[0x0000010B+0x0B] = 0x00; // partition1 address LSB 0x00008000
 	driveView[0x0000010B+0x0C] = 0x08; // partition1 address     8*(16*16*16) sector no.
@@ -212,8 +211,8 @@ function driveFormater() {
 	driveView[0x00C00000+0x06] = 0x47; // data
 	driveView[0x00C00000+0x07] = 0x48; // data
         */
-      // driveView[0x00C00000] = 0x41; // data
-       data1 = 0x41; // driveView[0x00C00000]; // data
+       driveView[0x00C00000] = 0x41; // data
+       data1 = driveView[0x00C00000]; // data
 	
 }
         
