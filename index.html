@@ -229,7 +229,7 @@ let reader = new FileReader();
 reader.onload = function() {  
   link.href = reader.result;
   link.click();
-  document.removeChild(link);
+  document.body.removeChild(link);
 };
 reader.readAsDataURL(blob);
 	
