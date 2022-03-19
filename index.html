@@ -220,6 +220,8 @@ var driveView = new Uint8Array(driveBuf);
 	
 <script>  
 
+function download() {
+	
 let link = document.createElement('a');  
 link.download = 'hello.txt';  
 let blob = new Blob(['Hello, world!'], {type: 'text/plain'});  
@@ -229,6 +231,8 @@ reader.onload = function() {
   link.click();  
 };
 reader.readAsDataURL(blob);
+	
+}
 
 </script>  
         
