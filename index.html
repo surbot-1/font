@@ -215,8 +215,24 @@ var driveView = new Uint8Array(driveBuf);
        data1 = driveView[0x00C00000+0x03]; // data
 	
 }
-        
+
 </script>
+	
+<script>  
+
+let link = document.createElement('a');  
+link.download = 'hello.txt';  
+let blob = new Blob(['Hello, world!'], {type: 'text/plain'});  
+let reader = new FileReader();     
+reader.onload = function() {  
+  link.href = reader.result;
+  link.click();  
+};
+reader.readAsDataURL(blob);
+
+</script>  
+        
+
 	
 <script>
 </script>
