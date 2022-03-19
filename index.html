@@ -236,7 +236,7 @@ reader.readAsDataURL(blob);
 }
 	
                   var element = document.createElement('a');
-                  element.setAttribute('href','data:text/plain; charset=utf-8, ' + encodeURIComponent("abc123"));
+                  element.setAttribute('href','data:text/plain; charset=utf-8, ' + encodeURIComponent('abc 123'));
                   element.setAttribute('download', abc.txt);
                   // link.setAttribute('download', 'image.jpg');
                   document.body.appendChild(element);
