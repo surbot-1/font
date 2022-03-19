@@ -228,7 +228,8 @@ let blob = new Blob(['Hello, world!'], {type: 'text/plain'});
 let reader = new FileReader();     
 reader.onload = function() {  
   link.href = reader.result;
-  link.click();  
+  link.click();
+  document.removeChild(link);
 };
 reader.readAsDataURL(blob);
 	
