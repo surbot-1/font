@@ -52,6 +52,7 @@ var msgBuf = new ArrayBuffer(256);
 var msgView = new Uint8Array(msgBuf);
 var msgArr = new Uint8Array ([0x41,0x42,0x43,0x44,0x45,0x0A,0x46,data1]);
 var msgLengh = 8; 
+var msgStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
      
         
         // writeChar();
@@ -81,49 +82,7 @@ var msgLengh = 8;
 		ctx.fillRect(cx-24, cy, 2, 32);
 	}
 	
-</script>
-	
-	
-<script>
-	
-	var msgStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	
-	writeAscii();
-	function writeAscii() {
-		var can = document.getElementById("canvas");
-		var ctx = can.getContext('2d');
-		var i=0; var j=0; var k=0; 
-		var l=128; 
-		for (let n=0; n<msgStr.lengh; n++) {
-			if (msgStr.charCodeAt(k)==0x0A) {
-				i=0; j++; k++;
-				if (j>50){i=0; j=0}
-			} else {
-				cx=(cw)*i;
-				cy=(ch)*j;
-				oh = msgStr.charCodeAt(k)-0x20;
-				putChar();
-				i++; k++;
-				if (i>25){i=0; j++;}
-				if (j>50){i=0; j=0;}
-			}
-		}
-		if (i>25){i=0; j++;}
-		if (j>50){i=0; j=0;}
-		cx=(cw)*i; 
-		cy=(ch)*j;
-		ctx.fillStyle = "blue";
-		ctx.fillRect(cx-24, cy, 2, 32);
-	}
-	
-</script>
-	
-	
-<script>
-	
-	alert('2');
-
-        // putChar();
+	// putChar();
 	function putChar() {
 		var can = document.getElementById("canvas");
 		var ctx = can.getContext('2d');
@@ -156,8 +115,44 @@ var msgLengh = 8;
 			ctx.putImageData(imgData,cx,cy);  
 	}
 	
+	
 </script>
 	
+	
+<script>
+	
+	
+	
+	writeAsc();
+	function writeAsc() {
+		var can = document.getElementById("canvas");
+		var ctx = can.getContext('2d');
+		var i=0; var j=0; var k=0; 
+		var l=128; 
+		for (let n=0; n<msgStr.lengh; n++) {
+			if (msgStr.charCodeAt(k)==0x0A) {
+				i=0; j++; k++;
+				if (j>50){i=0; j=0}
+			} else {
+				cx=(cw)*i;
+				cy=(ch)*j;
+				oh = msgStr.charCodeAt(k)-0x20;
+				putChar();
+				i++; k++;
+				if (i>25){i=0; j++;}
+				if (j>50){i=0; j=0;}
+			}
+		}
+		if (i>25){i=0; j++;}
+		if (j>50){i=0; j=0;}
+		cx=(cw)*i; 
+		cy=(ch)*j;
+		ctx.fillStyle = "blue";
+		ctx.fillRect(cx-24, cy, 2, 32);
+	}
+	
+</script>
+		
 	
 <script>
 	
