@@ -86,20 +86,22 @@ var msgLengh = 8;
 	
 <script>
 	
+	var msgStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	
 	writeAscii();
 	function writeAscii() {
 		var can = document.getElementById("canvas");
 		var ctx = can.getContext('2d');
 		var i=0; var j=0; var k=0; 
-		var l=128; var oh=0;
-		for (let n=0; n<l; n++) {
-			if (msgArr[k]==0x0A) {
+		var l=128; 
+		for (let n=0; n<msgStr.lengh; n++) {
+			if (msgStr.charCodeAt(k)==0x0A) {
 				i=0; j++; k++;
 				if (j>50){i=0; j=0}
 			} else {
 				cx=(cw)*i;
 				cy=(ch)*j;
-				oh++;
+				oh = msgStr.charCodeAt(k)-0x20;
 				putChar();
 				i++; k++;
 				if (i>25){i=0; j++;}
