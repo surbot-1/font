@@ -140,8 +140,8 @@ var msgStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 				oh = cd-0x20;
 				putChar();
 				i++; k++;
-				if (i>25){i=0; j++;}
-				if (j>50){i=0; j=0;}
+				if (i>=26){i=0; j++;}
+				if (j>=50){i=0; j=0;}
 			}
 		}
 		if (i>25){i=0; j++;}
