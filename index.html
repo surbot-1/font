@@ -247,12 +247,55 @@ reader.readAsDataURL(blob);
                   document.body.removeChild(element);
 	
 	}
+	
+function download3() {
+  
+    let canvasImage = document.getElementById('canvas2').toDataURL('image/png', 1.0);
+    
+    // this can be used to download any image from webpage to local disk
+    let xhr = new XMLHttpRequest();
+    xhr.responseType = 'blob';
+    xhr.onload = function () {
+        let a = document.createElement('a');
+        a.href = window.URL.createObjectURL(xhr.response);
+        a.download = 'image.png';
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      };
+      xhr.open('GET', canvasImage); // This is to download the canvas Image
+      xhr.send();
+  
+  }
 
 </script>  
         
 
 	
 <script>
+	
+function download4() {
+  
+    let canvasImage = document.getElementById('canvas2').toDataURL('image/png', 1.0);
+    
+    // this can be used to download any image from webpage to local disk
+    let xhr = new XMLHttpRequest();
+    xhr.responseType = 'blob';
+    xhr.onload = function () {
+        let a = document.createElement('a');
+        a.href = window.URL.createObjectURL(xhr.response);
+        a.download = 'image.png';
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      };
+      xhr.open('GET', canvasImage); // This is to download the canvas Image
+      xhr.send();
+  
+  }
+	
 </script>
 <script>
 </script>
