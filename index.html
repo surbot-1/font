@@ -129,14 +129,15 @@ var msgStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 		var ctx = can.getContext('2d');
 		var i=0; var j=0; var k=0; 
 		var l=128; 
-		for (let n=0; n<msgStr.lengh; n++) {
-			if (msgStr.charCodeAt(k)==0x0A) {
+		for (let n=0; n<msgStr.length; n++) { 
+			var cd = (msgStr.charCodeAt(k);
+			if (cd==0x0A) {
 				i=0; j++; k++;
 				if (j>50){i=0; j=0}
 			} else {
 				cx=(cw)*i;
 				cy=(ch)*j;
-				oh = msgStr.charCodeAt(k)-0x20;
+				oh = cd-0x20;
 				putChar();
 				i++; k++;
 				if (i>25){i=0; j++;}
