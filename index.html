@@ -266,7 +266,8 @@ function download3() {
         a.click();
         a.remove();
       };
-      xhr.open('GET', imageUrl); // This is to download the canvas Image
+      // xhr.open('GET', canvasImage); // This is to download the canvas Image
+      xhr.open('GET', imageUrl);
       xhr.send();
   
   }
@@ -293,7 +294,7 @@ function download4() {
         a.click();
         a.remove();
       };
-      xhr.open('GET', canvasImage); // This is to download the canvas Image
+     xhr.open('GET', canvasImage); // This is to download the canvas Image
       xhr.send();
   
   }
