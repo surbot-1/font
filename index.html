@@ -32,18 +32,22 @@ canvs.setAttribute("height", "2176");  // 2400-112-112=2176
 document.getElementById("divCanv").appendChild(canvs); 
 	
 </script>
+	
+	
 <script>
+	
 var cw=24; var ch=32;
 var sw=4; var sh=8;
 var cxi=0; var cxf=1080;
 var cx=0; var cy=0;
 var oh=0x41-0x20;
 var data1;
+	
 </script>
 	
 	
 <script>
-	driveFormater();
+	
 var msgBuf = new ArrayBuffer(256);
 var msgView = new Uint8Array(msgBuf);
 var msgArr = new Uint8Array ([0x41,0x42,0x43,0x44,0x45,0x0A,0x46,data1]);
@@ -110,9 +114,12 @@ var cpr = 8;
 			ctx.putImageData(imgData,cx,cy);  
 	}
 	
-
+</script>
 	
-
+	
+<script>
+	
+driveFormater();
 function driveFormater() {
 var driveBuf = new ArrayBuffer(128*1024*1024);
 var driveView = new Uint8Array(driveBuf);
@@ -215,8 +222,9 @@ var driveView = new Uint8Array(driveBuf);
        data1 = driveView[0x00C00000+0x03]; // data
 	
 }
-
+	
 </script>
+	
 	
 <script>  
 
@@ -267,14 +275,13 @@ function download3() {
         a.remove();
       };
       // xhr.open('GET', canvasImage); // This is to download the canvas Image
-      xhr.open('GET', imageUrl);
+      xhr.open('GET', 'imageUrl');
       xhr.send();
   
   }
 
 </script>  
         
-
 	
 <script>
 	
