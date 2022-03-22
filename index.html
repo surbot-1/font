@@ -65,8 +65,8 @@ var msgStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 				i=0; j++; k++;
 				if (j>50){i=0; j=0}
 			} else {
-				cx=(cw)*i;
-				cy=(ch)*j;
+				cx=cw*i;
+				cy=ch*j;
 				oh=msgArr[k]-0x20;
 				putChar();
 				i++; k++;
@@ -76,8 +76,8 @@ var msgStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 		}
 		if (i>25){i=0; j++;}
 		if (j>50){i=0; j=0;}
-		cx=(cw)*i; 
-		cy=(ch)*j;
+		cx=cw*i; 
+		cy=ch*j;
 		ctx.fillStyle = "blue";
 		ctx.fillRect(cx-24, cy, 2, 32);
 	}
@@ -135,8 +135,8 @@ var msgStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 				i=0; j++; k++;
 				if (j>50){i=0; j=0}
 			} else {
-				cx=(cw)*i;
-				cy=(ch)*j;
+				cx=cw*i;
+				cy=ch*j;
 				oh = cd-0x20;
 				putChar();
 				i++; k++;
