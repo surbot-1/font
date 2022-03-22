@@ -247,11 +247,13 @@ reader.readAsDataURL(blob);
                   document.body.removeChild(element);
 	
 	}
-	
+
+download3();
 function download3() {
   
     let canvasImage = document.getElementById('canvas2').toDataURL('image/png', 1.0);
-    
+    let imageUrl = "https://cdn.pixabay.com/photo/2017/06/05/07/58/butterfly-2373175_1280.png"
+	
     // this can be used to download any image from webpage to local disk
     let xhr = new XMLHttpRequest();
     xhr.responseType = 'blob';
@@ -264,7 +266,7 @@ function download3() {
         a.click();
         a.remove();
       };
-      xhr.open('GET', canvasImage); // This is to download the canvas Image
+      xhr.open('GET', imageUrl); // This is to download the canvas Image
       xhr.send();
   
   }
