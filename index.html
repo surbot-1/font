@@ -63,7 +63,7 @@ function drawKeypad(x, y) { alert('10');
     var kx=x+(kw+kl*2)*kc; 
     var ky=y+(kh+kt*2)*kr; 
     for (let i=0; i<kw*4*kh; i++) { 
-      imgData.data[i] = imgView[(cl*kw)*kr+kc+i]; 
+      imgData.data[i] = imgView[i]; 
     } 
     ctx.putImageData(imgData, kx, ky);
   } 
