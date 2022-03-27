@@ -80,8 +80,9 @@ function drawKeypad(x, y) { alert('10');
     for (let i=0; i<cl; i++) { 
       if (j==0 && i==0) {cl=10; px=0;} 
       if (j==1 && i==0) {cl=9; px=40;} 
-      if (j==2 && i==0) {cl=8; px=0; pw=32;} 
-      if (j==2 && i==1) {cl=8; px=40; pw=0;}
+      if (j==2 && i==0) {cl=8; px=0; pw=40;} 
+      if (j==2 && i==1) {cl=8; px=40; pw=0;} 
+      if (j==2 && i==7) {cl=8; px=40; pw=40;}
       if (j==3 && i==0) {cl=10; px=0;} 
       kc=i; kr=j; 
       draw(kc, kr, kw, kh, kl, kt); 
