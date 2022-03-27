@@ -51,14 +51,16 @@ function drawKeypad(x, y) {
   var ctx = cvs.getContext('2d'); 
   var imgData = ctx.createImageData(kw, kh); 
 	
-        ctx.fillstyle = "lightgray";
-        ctx.fillRect(x, y, 1040, 136*4);
+	ctx.fillstyle = "lightgray";
+	ctx.fillRect(x, y, 1040, 136*4);
+	ctx.fillstyle = "lightgray";
+	ctx.fillRect(x, y-136, 1040, 136);
 	
-	ctx.beginPath(); 
+        /* ctx.beginPath(); 
 	ctx.lineWidth = "2"; 
 	ctx.strokeStyle = "red"; 
 	ctx.rect(x, y-136, 1040, 136); 
-	ctx.stroke();
+	ctx.stroke(); */
   
   var imgBuf = new ArrayBuffer(kw*4*kh*rw*cl); 
   var imgView = new Uint8Array(imgBuf); 
