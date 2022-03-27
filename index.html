@@ -40,7 +40,8 @@ drawKeypad(100, 500);
 function drawKeypad(x, y) { alert('10');
   // var x=0; var y=0; 
   // var w=80*10; var h=80*4; 
-  var px=0; var py=0;
+  var px=0; var py=0; 
+  var pw=0; var ph=0;
   var cl=10; var rw=4; 
   var kc=0; var kr=0; 
   var kl=8; var kt=8; 
@@ -66,11 +67,11 @@ function drawKeypad(x, y) { alert('10');
 	  for (let i=0; i<kw*4*kh; i++) { 
 		  imgData.data[i] = imgView[(kw*4*kh*cl)*kr+(kw*4*kh)*kc+i]; 
 	  } 
-	  ctx.putImageData(imgData, kx+kl, ky+kt); 
+	  ctx.putImageData(imgData, kx+pw+kl, ky+ph+kt); 
 	  ctx.beginPath(); 
 	  ctx.lineWidth = "2"; 
 	  ctx.strokeStyle = "red"; 
-	  ctx.rect(kx, ky, kw+2*kl, kh+2*kt); 
+	  ctx.rect(kx, ky, kw+pw+kl*2, kh+ph+kt*2); 
 	  ctx.stroke();
   } 
   alert('60');
@@ -78,7 +79,8 @@ function drawKeypad(x, y) { alert('10');
     for (let i=0; i<cl; i++) { 
       if (j==0 && i==0) {cl=10; px=0;} 
       if (j==1 && i==0) {cl=9; px=40;} 
-      if (j==2 && i==0) {cl=10; px=0;} 
+      if (j==2 && i==0) {cl=8; px=0; pw=64;} 
+      if (j==2 && i==1) {cl=8; px=40; pw=0;}
       if (j==3 && i==0) {cl=10; px=0;} 
       kc=i; kr=j; 
       draw(kc, kr, kw, kh, kl, kt); 
