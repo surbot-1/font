@@ -37,7 +37,7 @@ document.getElementById("divCanv").appendChild(canvs);
 <script>
 
 drawKeypad(20, 500);
-function drawKeypad(x, y) { alert('10');
+function drawKeypad(x, y) { 
   // var x=0; var y=0; 
   // var w=80*10; var h=80*4; 
   var px=0; var py=0; 
@@ -46,21 +46,27 @@ function drawKeypad(x, y) { alert('10');
   var kc=0; var kr=0; 
   var kl=12; var kt=20; 
   var kw=80; var kh=96; 
-  alert('20');
+  
   var cvs = document.getElementById("canvas"); 
   var ctx = cvs.getContext('2d'); 
   var imgData = ctx.createImageData(kw, kh); 
-  alert('30');
+	
+	ctx.beginPath(); 
+	ctx.lineWidth = "2"; 
+	ctx.strokeStyle = "red"; 
+	ctx.rect(x, y-136, 1040, 136); 
+	ctx.stroke();
+  
   var imgBuf = new ArrayBuffer(kw*4*kh*rw*cl); 
   var imgView = new Uint8Array(imgBuf); 
-  alert('40');
+  
   for (let i=0; i<(kw*4*kh)*(rw*cl); i+=4) { 
     imgView[i+0] = 0x00; // R
     imgView[i+1] = 0x00; // G
     imgView[i+2] = 0xFF; // B
     imgView[i+3] = 0xFF; // A
   } 
-  alert('50');
+  
   function draw(kc, kr, kw, kh, kl, kt) { 
 	  var kx=x+px+(kw+kl*2)*kc; 
 	  var ky=y+py+(kh+kt*2)*kr; 
@@ -75,7 +81,7 @@ function drawKeypad(x, y) { alert('10');
 	  ctx.rect(kx, ky, kw+pw+kl*2, kh+ph+kt*2); 
 	  ctx.stroke();
   } 
-  alert('60');
+  
   for (let j=0; j<rw; j++) { 
     for (let i=0; i<cl; i++) { 
       if (j==0 && i==0) {cl=10; px=0;} 
@@ -92,7 +98,7 @@ function drawKeypad(x, y) { alert('10');
       draw(kc, kr, kw, kh, kl, kt); 
     } 
   }  
-  alert('70');
+  
 }
 	
 </script>
