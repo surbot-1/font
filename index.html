@@ -51,9 +51,9 @@ function drawKeypad(x, y) {
   var ctx = cvs.getContext('2d'); 
   var imgData = ctx.createImageData(kw, kh); 
 	
-	ctx.fillstyle = "lightgray";
+	ctx.fillstyle = "gainsboro";
 	ctx.fillRect(x, y, 1040, 136*4);
-	ctx.fillstyle = "lightgray";
+	ctx.fillstyle = "gainsboro";
 	ctx.fillRect(x, y-136, 1040, 136);
 	
         /* ctx.beginPath(); 
@@ -82,7 +82,7 @@ function drawKeypad(x, y) {
 	  ctx.putImageData(imgData, kx+kl, ky+kt); 
 	  ctx.beginPath(); 
 	  ctx.lineWidth = "2"; 
-	  ctx.strokeStyle = "red"; 
+	  ctx.strokeStyle = "blue"; 
 	  ctx.rect(kx, ky, kw+pw+kl*2, kh+ph+kt*2); 
 	  ctx.stroke();
   } 
