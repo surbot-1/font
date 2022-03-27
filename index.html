@@ -51,9 +51,9 @@ function drawKeypad(x, y) {
   var ctx = cvs.getContext('2d'); 
   var imgData = ctx.createImageData(kw, kh); 
 	
-	ctx.fillstyle = "#E3E3E3";
+	ctx.fillstyle = "rgba(128,128,128,0.5)";
 	ctx.fillRect(x, y, 1040, 136*4);
-	ctx.fillstyle = "#E3E3E3";
+	ctx.fillstyle = "rgba(228,128,128,0.5)";
 	ctx.fillRect(x, y-136, 1040, 136);
 	
         /* ctx.beginPath(); 
