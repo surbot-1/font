@@ -74,11 +74,11 @@ function drawKeypad(x, y) { // alert('1');
 		  imgData.data[i] = imgView[(kw*4*kh*cl)*kr+(kw*4*kh)*kc+i]; 
 	  } 
 	  ctx.putImageData(imgData, kx+kl, ky+kt); 
-	  ctx.beginPath(); 
+	  /* ctx.beginPath(); 
 	  ctx.lineWidth = "2"; 
 	  ctx.strokeStyle = "rgba(220,220,220,1.0)"; // "black"; 
 	  ctx.rect(kx, ky, kw+pw+kl*2, kh+ph+kt*2); 
-	  ctx.stroke();
+	  ctx.stroke(); */
   } 
   
   for (let j=0; j<rw; j++) { 
