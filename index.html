@@ -36,7 +36,7 @@ document.getElementById("divCanv").appendChild(canvs);
 	
 <script>
 
-drawKeypad(100, 500);
+drawKeypad(0, 500);
 function drawKeypad(x, y) { alert('10');
   // var x=0; var y=0; 
   // var w=80*10; var h=80*4; 
@@ -44,8 +44,8 @@ function drawKeypad(x, y) { alert('10');
   var pw=0; var ph=0;
   var cl=10; var rw=4; 
   var kc=0; var kr=0; 
-  var kl=8; var kt=8; 
-  var kw=64; var kh=64; 
+  var kl=16; var kt=16; 
+  var kw=80; var kh=80; 
   alert('20');
   var cvs = document.getElementById("canvas"); 
   var ctx = cvs.getContext('2d'); 
