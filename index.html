@@ -60,12 +60,17 @@ function drawKeypad(x, y) { alert('10');
   } 
   alert('50');
   function draw(kc, kr, kw, kh, kl, kt) { 
-    var kx=x+(kw+kl*2)*kc; 
-    var ky=y+(kh+kt*2)*kr; 
-    for (let i=0; i<kw*4*kh; i++) { 
-      imgData.data[i] = imgView[i]; 
-    } 
-    ctx.putImageData(imgData, kx+kl, ky+kt);
+	  var kx=x+(kw+kl*2)*kc; 
+	  var ky=y+(kh+kt*2)*kr; 
+	  for (let i=0; i<kw*4*kh; i++) { 
+		  imgData.data[i] = imgView[i]; 
+	  } 
+	  ctx.putImageData(imgData, kx+kl, ky+kt); 
+	  ctx.beginPath(); 
+	  ctx.lineWidth = "2"; 
+	  ctx.strokeStyle = "red"; 
+	  ctx.rect(kx, ky, kw+2*kl, kh+2*kt); 
+	  ctx.stroke();
   } 
   alert('60');
   for (let j=0; j<rw; j++) { 
