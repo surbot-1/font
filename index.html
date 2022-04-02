@@ -49,7 +49,10 @@ function drawCircle(x, y, a) {
 	} 
 	for (let i=0; i<a; i++) { 
 		var j=Math.sqrt(a*a-i*i); 
-		ctx.putImageData(imgData, x+i, y+j);
+		ctx.putImageData(imgData, x+i, y-j); 
+		ctx.putImageData(imgData, x+i, y+j); 
+		ctx.putImageData(imgData, x-i, y-j); 
+		ctx.putImageData(imgData, x-i, y+j); 
 	}
 }
 	
