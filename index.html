@@ -61,8 +61,14 @@ function drawCircle(x, y, a, t) {
 	
 <script>
 	
-function drawBezierCurve() {  
-	// p(t) = (1-t)2p0 + 2t(1-t)p1 + t2p2
+function drawBezierCurve(p0, p1, p2) { 
+	var cnv = document.getElementById("canvas"); 
+	var ctx = cnv.getContext('2d'); 
+	var imgData = ctx.createImageData(1, 1); 
+	for (let t=0.00; t<1+0.01; t+=0.01) { 
+		var p(t) = (1-t)*(1-t)*p0 + 2*t*(1-t)*p1 + t*t*p2 ; 
+		ctx.putImageData(1, 1);
+	}
 }
 	
 </script>
