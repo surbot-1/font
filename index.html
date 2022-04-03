@@ -61,7 +61,8 @@ function drawCircle(x, y, a, t) {
 	
 <script>
 	
-	drawBezierCurve(200, 400, [100,0], [75,50], [100,100], 2); 
+	drawBezierCurve(200, 400, [100,0], [50,25], [100,50], 2); 
+	drawBezierCurve(200, 400, [100,50], [50,75], [100,100], 2); 
 function drawBezierCurve(x, y, p0, p1, p2, th) { 
 	var cnv = document.getElementById("canvas"); 
 	var ctx = cnv.getContext('2d'); 
