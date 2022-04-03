@@ -76,8 +76,8 @@ function drawBezierLine(x, y, p0, p1, th) {
 		imgData.data[i+3]=0xFF; 
 	} 
 	var scale = 0.05; 
-	if ((p1[1]-p1[0])>(p0[1]-p0[0])) {scale = 1/(p1[1]-p1[0]);} 
-	if ((p1[1]-p1[0])<(p0[1]-p0[0])) {scale = 1/(p0[1]-p0[0]);}
+	if ((p1[0]-p0[0])>(p1[1]-p0[1])) {scale = 1/(p1[0]-p0[0]);} 
+	if ((p1[0]-p0[0])<(p1[1]-p0[1])) {scale = 1/(p1[1]-p0[1]);}
 	for (let t=0.00; t<1; t+=scale) { 
 		var ptx = (1-t)*p0[0] + t*p1[0]; 
 		var pty = (1-t)*p0[1] + t*p1[1]; 
