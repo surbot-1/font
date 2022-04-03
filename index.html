@@ -77,7 +77,7 @@ function drawBezierLine(x, y, p0, p1, th) {
 	} 
 	for (let t=0.00; t<1; t+=0.05) { 
 		var ptx = (1-t)*p0[0] + t*p1[0]; 
-		var pty = (1-t)*(1-t)*p0[1] + t*p1[1]; 
+		var pty = (1-t)*p0[1] + t*p1[1]; 
 		ctx.putImageData(imgData, x+ptx, y-pty);
 	}
 }
