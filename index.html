@@ -61,7 +61,7 @@ function drawCircle(x, y, a, t) {
 	
 <script> 
 	
-         drawBezierLine(200, 400, [0,0], [100,10], 2); 
+         drawBezierLine(200, 400, [0,10], [100,10], 2); 
 function drawBezierLine(x, y, p0, p1, th) { 
 	var cnv = document.getElementById("canvas"); 
 	var ctx = cnv.getContext('2d'); 
@@ -75,7 +75,7 @@ function drawBezierLine(x, y, p0, p1, th) {
 		imgData.data[i+2]=0x00; 
 		imgData.data[i+3]=0xFF; 
 	} 
-	for (let t=0.00; t<1; t+=0.05) { 
+	for (let t=0.00; t<1; t+=0.01) { 
 		var ptx = (1-t)*p0[0] + t*p1[0]; 
 		var pty = (1-t)*p0[1] + t*p1[1]; 
 		ctx.putImageData(imgData, x+ptx, y-pty);
