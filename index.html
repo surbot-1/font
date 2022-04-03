@@ -67,9 +67,9 @@ function drawBezierCurve(x, y, p0, p1, p2, th) {
 	var ctx = cnv.getContext('2d'); 
 	var imgData = ctx.createImageData(th, th); 
 	for (let t=0.0; t<1+0.1; t+=0.1) { 
-		var p(t)[0] = (1-t)*(1-t)*p0[0] + 2*(1-t)*t*p1[0] + t*t*p2[0]; 
-		var p(t)[1] = (1-t)*(1-t)*p0[1] + 2*(1-t)*t*p1[1] + t*t*p2[1]; 
-		ctx.putImageData(x+p(t)[0], y+p(t)[1]);
+		var pt[0] = (1-t)*(1-t)*p0[0] + 2*(1-t)*t*p1[0] + t*t*p2[0]; 
+		var pt[1] = (1-t)*(1-t)*p0[1] + 2*(1-t)*t*p1[1] + t*t*p2[1]; 
+		ctx.putImageData(x+pt[0], y+pt[1]);
 	}
 }
 	
